@@ -1,0 +1,20 @@
+// Module map for the Llama SwiftPM target (steven-moon/llama.cpp fork).
+//
+// llama.h textually includes ggml.h; we keep matching ggml headers
+// staged alongside in `include/` (mirroring PocketMind v1's xcframework
+// header-staging step) so a single `publicHeadersPath: "include"` in
+// Package.swift exposes both the llama and ggml C surfaces to Swift
+// consumers.
+//
+// Consumers import this as `import Llama`.
+
+module Llama {
+    header "ggml.h"
+    header "ggml-alloc.h"
+    header "ggml-backend.h"
+    header "ggml-cpu.h"
+    header "ggml-opt.h"
+    header "gguf.h"
+    header "llama.h"
+    export *
+}
