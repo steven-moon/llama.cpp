@@ -1,3 +1,7 @@
+// PC-ARCH-GUARD: this arch/arm TU must only compile for ARM slices; under a
+// universal (arm64+x86_64) SwiftPM build the host-#if in Package.swift keeps it
+// for the x86_64 slice too, where it duplicates the generic repack/quant symbols.
+#if defined(__aarch64__) || defined(__arm__) || defined(_M_ARM) || defined(_M_ARM64)
 #define GGML_COMMON_IMPL_C
 #include "ggml-common.h"
 #include "ggml-quants.h"
@@ -4243,3 +4247,5 @@ void ggml_vec_dot_iq4_xs_q8_K(int n, float * GGML_RESTRICT s, size_t bs, const v
 #endif
 }
 
+
+#endif // PC-ARCH-GUARD
