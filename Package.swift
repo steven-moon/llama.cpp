@@ -187,9 +187,9 @@ let package = Package(
                 .headerSearchPath("ggml/src/ggml-cpu"),
 
                 // Version information.
-                .define("GGML_VERSION", to: "\"0.12.0\""),
-                .define("GGML_COMMIT", to: "\"b9301\""),
-                .define("LLAMA_BUILD_NUMBER", to: "9301"),
+                .define("GGML_VERSION", to: "\"0.15.1\""),
+                .define("GGML_COMMIT", to: "\"b9630\""),
+                .define("LLAMA_BUILD_NUMBER", to: "9630"),
 
                 // Backend selection — CPU only in -pc.1.
                 .define("GGML_USE_CPU"),
@@ -211,9 +211,9 @@ let package = Package(
                 .headerSearchPath("ggml/src"),
                 .headerSearchPath("ggml/src/ggml-cpu"),
 
-                .define("GGML_VERSION", to: "\"0.12.0\""),
-                .define("GGML_COMMIT", to: "\"b9301\""),
-                .define("LLAMA_BUILD_NUMBER", to: "9301"),
+                .define("GGML_VERSION", to: "\"0.15.1\""),
+                .define("GGML_COMMIT", to: "\"b9630\""),
+                .define("LLAMA_BUILD_NUMBER", to: "9630"),
 
                 .define("GGML_USE_CPU"),
                 .define("GGML_USE_ACCELERATE", .when(platforms: [.macOS, .iOS, .visionOS, .tvOS])),
