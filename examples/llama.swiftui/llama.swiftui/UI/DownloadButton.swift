@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DownloadButton: View {
-    @ObservedObject private var llamaState: LlamaState
+    @Bindable private var llamaState: LlamaState
     private var modelName: String
     private var modelUrl: String
     private var filename: String

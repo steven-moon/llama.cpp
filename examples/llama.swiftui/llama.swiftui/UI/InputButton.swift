@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InputButton: View {
-    @ObservedObject var llamaState: LlamaState
+    @Bindable var llamaState: LlamaState
     @State private var inputLink: String = ""
     @State private var status: String = "download"
     @State private var filename: String = ""

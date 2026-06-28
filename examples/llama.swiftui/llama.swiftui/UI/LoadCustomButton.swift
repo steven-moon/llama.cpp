@@ -2,7 +2,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct LoadCustomButton: View {
-    @ObservedObject private var llamaState: LlamaState
+    @Bindable private var llamaState: LlamaState
     @State private var showFileImporter = false
 
     init(llamaState: LlamaState) {

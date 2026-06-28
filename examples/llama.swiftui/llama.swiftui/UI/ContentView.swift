@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var llamaState = LlamaState()
+    @State var llamaState = LlamaState()
     @State private var multiLineText = ""
     @State private var showingHelp = false    // To track if Help Sheet should be shown
 
@@ -75,7 +75,7 @@ struct ContentView: View {
     }
     struct DrawerView: View {
 
-        @ObservedObject var llamaState: LlamaState
+        @Bindable var llamaState: LlamaState
         @State private var showingHelp = false
         func delete(at offsets: IndexSet) {
             offsets.forEach { offset in

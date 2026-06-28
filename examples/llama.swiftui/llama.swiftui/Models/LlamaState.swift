@@ -1,4 +1,5 @@
 import Foundation
+import Observation
 
 struct Model: Identifiable {
     var id = UUID()
@@ -8,12 +9,13 @@ struct Model: Identifiable {
     var status: String?
 }
 
+@Observable
 @MainActor
-class LlamaState: ObservableObject {
-    @Published var messageLog = ""
-    @Published var cacheCleared = false
-    @Published var downloadedModels: [Model] = []
-    @Published var undownloadedModels: [Model] = []
+class LlamaState {
+    var messageLog = ""
+    var cacheCleared = false
+    var downloadedModels: [Model] = []
+    var undownloadedModels: [Model] = []
     let NS_PER_S = 1_000_000_000.0
 
     private var llamaContext: LlamaContext?
