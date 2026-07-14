@@ -17,12 +17,10 @@
 //   * iOS    (.v17)  — PocketMind v2 TestFlight
 //   * Linux  (default platform) — ADR-0041 production server
 //
-// Sources stay bit-identical to upstream tag b9301; the only delta is
-// (a) this Package.swift, (b) `include/module.modulemap`, and (c) a copy
-// of `ggml/include/*.h` into `include/` so SwiftPM's single
-// `publicHeadersPath` can expose both `llama.h` and the ggml headers
-// transitively. Same header-staging trick PocketMind v1 used in
-// `Scripts/build-llama-xcframework.sh`.
+// Upstream sources remain unchanged. The fork adds this Package.swift and
+// `include/module.modulemap`; forwarding headers in `include/` expose ggml's
+// canonical headers through SwiftPM's single `publicHeadersPath` without
+// maintaining duplicate declarations that can drift during upstream merges.
 //
 // Workspace fork convention
 // -------------------------
